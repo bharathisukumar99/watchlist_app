@@ -25,7 +25,8 @@ class BottomNavigationItemWidget extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(e.title == state.currentItem ? e.activeIcon : e.icon,
-                      color: activeColor(e.title == state.currentItem)),
+                      color:
+                          activeColor(e.title == state.currentItem, context)),
                   FittedBox(
                     child: Text(
                       e.title.name.capitalize(),
@@ -33,7 +34,8 @@ class BottomNavigationItemWidget extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
-                          color: activeColor(e.title == state.currentItem)),
+                          color: activeColor(
+                              e.title == state.currentItem, context)),
                     ),
                   )
                 ],
@@ -45,6 +47,7 @@ class BottomNavigationItemWidget extends StatelessWidget {
     );
   }
 
-  Color activeColor(bool isActive) =>
-      isActive ? Color(0xff38B990) : Color(0xffbdbdbd);
+  Color activeColor(bool isActive, BuildContext context) => isActive
+      ? Theme.of(context).primaryColor
+      : Theme.of(context).colorScheme.onPrimary;
 }

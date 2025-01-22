@@ -14,7 +14,7 @@ class WLAddButton extends StatelessWidget {
     return BlocBuilder<WatchlistBloc, WatchlistState>(
       builder: (context, state) {
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(8, 8, 30, 8),
           child: FilledButton(
             onPressed: () {
               if (state.watchListGroup

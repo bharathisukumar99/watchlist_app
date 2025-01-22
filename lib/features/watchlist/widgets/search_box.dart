@@ -19,7 +19,7 @@ class SearchBox extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            color: Color(0xff121212),
+            color: Theme.of(context).colorScheme.primaryContainer,
           ),
           child: ListTile(
             onTap: onTap,
@@ -55,7 +55,7 @@ class SearchBox extends StatelessWidget {
                   onPressed: readOnly ? null : () {},
                   icon: Icon(
                     Icons.apps_rounded,
-                    color: Color(0xff38B990),
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
                 IconButton(
@@ -65,7 +65,7 @@ class SearchBox extends StatelessWidget {
                     quarterTurns: 1,
                     child: Icon(
                       Icons.tune,
-                      color: Color(0xff38B990),
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 )
